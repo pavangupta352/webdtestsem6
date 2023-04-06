@@ -1,3 +1,8 @@
+const express = require("express");
+const router = express.Router();
+const Cart = require("../models/cart");
+const Product = require("../models/Product");
+
 // Get cart data
 router.get("/cart", async (req, res) => {
     const cart = await Cart.findOne({ user: req.user._id }).populate(

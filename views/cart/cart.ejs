@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Cart</title>
+</head>
+<body>
+	<h1>Cart</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Product</th>
+				<th>Price</th>
+				<th>Quantity</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% cart.items.forEach((item) => { %>
+				<tr>
+					<td><%= item.product.name %></td>
+					<td>$<%= item.product.price %></td>
+					<td><%= item.quantity %></td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+	<p>Total: $<%= cart.total.toFixed(2) %></p>
+	<a href="/checkout">Checkout</a>
+</body>
+</html>
